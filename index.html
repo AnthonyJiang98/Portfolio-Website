@@ -1,301 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony Jiang | Software Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav id="desktop-nav">
-        <div class="logo"> AJ</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experiences">Experiences</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contacts">Contacts</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <nav id="hamburger-nav">
-        <div class="logo">Anthony Jiang</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a class="menu-hover" href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a class="menu-hover" href="#experiences" onclick="toggleMenu()">Experiences</a></li>
-                <li><a class="menu-hover" href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a class="menu-hover" href="#contacts" onclick="toggleMenu()">Contacts</a></li>
-            </div>
-        </div>
-    </nav>
+  <nav>
+    <div class="logo">Anthony Jiang</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experiences">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contacts">Contact</a></li>
+      <li>
+        <button id="theme-toggle" title="Toggle Mode">
+          <span class="sun-icon">☀️</span>
+          <span class="moon-icon">🌙</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
 
-    <section id="profile">
-        <div class="section_pic_container">
-            <img src="./components/AJpfp.png" alt="Anthony's profile picture">
-        </div>
-        <div class="section_text">
-            <p class="section_text_p1">Hello, I'm</p>
-            <h1 class="title">Anthony Jiang</h1>
-            <p class="section_text_p2">A Software Engineer</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./components/Anthony\'s Resume.pdf')">
-                    Download CV
-                </button>
-                <button class="btn btn-color-1" onclick="location.href='./#contacts'">
-                    Contact Info
-                </button>
-            </div>
-            <div id="socials-container">
-                <img src="./components/linkedin.png" alt="My linkedIn profile" class="icon"
-                    onclick="location.href='https://www.linkedin.com/in/anthony-jiang98/'">
-                <img src="./components/github.png" alt="My Github profile" class="icon"
-                    onclick="location.href='https://github.com/AnthonyJiang98'">
-            </div>
-        </div>
-    </section>
+  <section id="profile">
+    <div class="section_pic_container">
+      <img src="./components/AJpfp.png" alt="Anthony Jiang" />
+    </div>
+    <div class="section_text">
+      <p class="section_text_p1">Hello, I'm</p>
+      <h1 class="title">Anthony Jiang</h1>
+      <p class="section_text_p2">Software Engineer • Full Stack & Systems</p>
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('./components/Anthony\'s Resume.pdf')">Download CV</button>
+        <button class="btn btn-color-1" onclick="location.href='#contacts'">Contact Info</button>
+      </div>
+      <div class="btn-container" style="margin-top: 1rem;">
+        <img src="./components/linkedin.png" class="icon" onclick="location.href='https://www.linkedin.com/in/anthony-jiang98/'" />
+        <img src="./components/github.png" class="icon" onclick="location.href='https://github.com/AnthonyJiang98'" />
+      </div>
+    </div>
+  </section>
 
-    <section id="about">
-        <p class="section_text_p1">Get to know more</p>
-        <h1 class="title">About me</h1>
-        <div class="section-container">
-            <div class="section_pic_container">
-                <img src="./components/animeaboutpic.avif" alt="anime profile picture" class="about-pic" />
-            </div>
-            <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img src="./components/experience.png" alt="experience icon" class="icon" />
-                        <h3>Experience</h3>
-                        <p>Software Implementation Consultant</p>
-                        <p id="fast" onclick="location.href='https://www.fastenterprises.com/solutions/'"> <b>Fast
-                                Enterprises</b> </p>
-                    </div>
-                    <div class="details-container">
-                        <img src="./components/education.png" alt="education icon" class="icon" />
-                        <h3>Education</h3>
-                        <p>B.S in Computer Engineering</p>
-                        <p id="sbu" onclick="location.href='https://www.stonybrook.edu/'"><b>Stony Brook University</b>
-                        </p>
-                    </div>
-                </div>
-                <div class="text-container">
-                    <p>I have a background in in Computer Engineering from Stony Brook University and I love to explore
-                        new technology in the Software Development field. I am well versed in a variety of languages
-                        such as Python, Java, C++ and was a fellow at Headstarter. Currently I am working as a software
-                        implementation consultant, where I work alongside clients to create new software solutions, maintain
-                        the current system, and fix any bugs that we come across. From my work at FAST, I have integrated
-                        VB.net and C# into my tool kit, learned about the development cycle, and am currently 
-                        revolutionizing tax processing for the city of Kansas City!</p>
-                </div>
-            </div>
-        </div>
-        <img src="./components/arrow.png" alt="next section arrow" class="arrow"
-            onclick="location.href='./#experiences'" />
-    </section>
+  <section id="about">
+    <p class="section_text_p1">Get to know more</p>
+    <h1 class="title">About Me</h1>
+    <div class="about-containers">
+      <div class="details-container">
+        <img src="./components/experience.png" class="icon" style="margin-bottom: 1rem;" />
+        <h3>Experience</h3>
+        <p>Software Implementation Consultant<br><b>FAST Enterprises</b></p>
+      </div>
+      <div class="details-container">
+        <img src="./components/education.png" class="icon" style="margin-bottom: 1rem;" />
+        <h3>Education</h3>
+        <p>B.S. Computer Engineering<br><b>Stony Brook University</b></p>
+      </div>
+    </div>
+    <div class="about-bio">
+      <p>
+        I specialize in building reliable software systems and partnering with clients to deliver production-grade technical solutions. 
+        Currently at FAST Enterprises, I navigate large legacy codebases, integrating VB.NET and C# with modern SQL workflows 
+        to ensure performance and correctness in mission-critical applications.
+      </p>
+    </div>
+  </section>
 
-    <section id="experiences">
-        <p class="section_text_p1">Explore my</p>
-        <h1 class="title">Skills</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Software Engineer</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>C#</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>Python</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>C++</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>HTML</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>CSS</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>JavaScript</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Implementation Consultant</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>SQL</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>Debugging</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>Vb.net</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>SaaS</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>APIs</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./components/checkmark.png" alt="experience checkmark icon" class="icon" />
-                            <div>
-                                <h3>Stats</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
+  <section id="experiences">
+    <p class="section_text_p1">Technical Expertise</p>
+    <h1 class="title">Skills & Tools</h1>
+    <div class="about-containers">
+      <div class="details-container">
+        <h3><img src="./components/checkmark.png" class="icon" /> Engineering</h3>
+        <div class="tech-stack-wrapper">
+          <span class="tech-badge">C#</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">C++</span>
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">HTML/CSS</span>
         </div>
-        <img src="./components/arrow.png" alt="next section arrow" class="arrow"
-            onclick="location.href='./#projects'" />
-    </section>
-
-    <section id="projects">
-        <p class="section_text_p1">Browse My Recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./components/wordle.jpg" alt="project 1" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Wordle</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/AnthonyJiang98/Wordle'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://wordle-sandy-two.vercel.app/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./components/dog-img.jpg" alt="project 2" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">TinDog</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/AnthonyJiang98/TinDog'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://tin-dog-henna-zeta.vercel.app/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./components/project-3.png" alt="project 3" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project Three</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="details-container">
+        <h3><img src="./components/checkmark.png" class="icon" /> Systems</h3>
+        <div class="tech-stack-wrapper">
+          <span class="tech-badge">SQL (T-SQL)</span>
+          <span class="tech-badge">VB.NET</span>
+          <span class="tech-badge">REST APIs</span>
+          <span class="tech-badge">Debugging</span>
+          <span class="tech-badge">Git</span>
         </div>
-        <img src="./components/arrow.png" alt="next section arrow" class="arrow"
-            onclick="location.href='./#contacts'" />
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="contacts">
-        <p class="section_text_p1">Get in Touch</p>
-        <h1 class="title"> Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img src="./components/email.png" alt="email icon" class="icon contact-icon email-icon"
-                    onclick="location.href='mailto:anthonyjiang98@gmail.com'" />
-                <p>
-                    <a href="mailto:anthonyjiang98@gmail.com">Email</a>
-                </p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./components/linkedin.png" alt="linkedIn icon" class="icon contact-icon linkedin-icon"
-                    onclick="location.href='https://www.linkedin.com/in/anthony-jiang98/'" />
-                <p>
-                    <a href="https://www.linkedin.com/in/anthony-jiang98/">linkedIn</a>
-                </p>
-            </div>
+  <section id="projects">
+    <p class="section_text_p1">Recent Work</p>
+    <h1 class="title">Portfolio Projects</h1>
+    <div class="about-containers">
+      <div class="project-card">
+        <div class="project-img-container"><img src="./components/wordle.jpg" class="project-img" /></div>
+        <h2 class="project-title-h2">Wordle Clone</h2>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="location.href='https://github.com/AnthonyJiang98/Wordle'">GitHub</button>
+          <button class="btn btn-color-2" onclick="location.href='https://wordle-sandy-two.vercel.app/'">Live Demo</button>
         </div>
-    </section>
+      </div>
+      <div class="project-card">
+        <div class="project-img-container"><img src="./components/dog-img.jpg" class="project-img" /></div>
+        <h2 class="project-title-h2">TinDog Landing</h2>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="location.href='https://github.com/AnthonyJiang98/TinDog'">GitHub</button>
+          <button class="btn btn-color-2" onclick="location.href='https://tin-dog-henna-zeta.vercel.app/'">Live Demo</button>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img-container"><img src="./components/Sentinel Risk Engine.png" class="project-img" /></div>
+        <h2 class="project-title-h2">Sentinel Engine</h2>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="location.href='https://github.com/AnthonyJiang98/Sentinel-Risk-Engine/'">GitHub</button>
+          <button class="btn btn-color-2" onclick="location.href='https://sentinel-risk-engine-aj.vercel.app/'">Live Demo</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experiences">Experiences</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contacts">Contacts</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>Copyright &#169; 2024 Anthony Jiang. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+  <section id="contacts">
+    <p class="section_text_p1">Get in Touch</p>
+    <h1 class="title">Let's Connect</h1>
+    <div class="contact-card">
+      <p class="contact-p">
+        Whether you have a question or just want to discuss technical systems, I'm always open to connecting.
+      </p>
+      <div class="btn-container">
+        <button class="btn btn-color-1" onclick="location.href='mailto:anthonyjiang98@gmail.com'">Email Me</button>
+      </div>
+      <div class="btn-container social-links-container">
+        <a href="https://www.linkedin.com/in/anthony-jiang98/" target="_blank" class="social-link">LinkedIn</a>
+        <span class="divider">|</span>
+        <a href="https://github.com/AnthonyJiang98" target="_blank" class="social-link">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Anthony Jiang. Software Engineer.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
