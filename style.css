@@ -4,10 +4,10 @@
   --text-main: #111827;
   --text-soft: #4b5563;
   --accent-gradient: linear-gradient(90deg, #111, #666);
-  --card-bg: #ffffff;
-  --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.7); /* Translucent */
+  --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
   --border-color: #e5e7eb;
-  --nav-bg: rgba(255, 255, 255, 0.9);
+  --nav-bg: rgba(255, 255, 255, 0.8);
   --secondary-btn: #f3f4f6;
   --btn-hover-bg: #1f2937;
   --icon-filter: none;
@@ -18,13 +18,25 @@
   --text-main: #f8fafc;
   --text-soft: #94a3b8;
   --accent-gradient: linear-gradient(90deg, #38bdf8, #818cf8);
-  --card-bg: #1e293b;
-  --card-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  --card-bg: rgba(30, 41, 59, 0.7); /* Translucent */
+  --card-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
   --border-color: #334155;
   --nav-bg: rgba(15, 23, 42, 0.9);
   --secondary-btn: #334155;
   --btn-hover-bg: #38bdf8;
   --icon-filter: invert(1);
+}
+
+/* ================= GALAXY CANVAS ================= */
+#galaxy-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--bg-color);
+  pointer-events: none;
 }
 
 /* ================= GLOBAL STYLES ================= */
@@ -48,9 +60,10 @@ section {
   padding: 8rem 10% 4rem;
   max-width: 1200px;
   margin: 0 auto;
+  background: transparent; /* Essential to see galaxy */
 }
 
-.title { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; }
+.title { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; position: relative; }
 .title::after {
   content: ""; display: block; width: 60px; height: 4px;
   background: var(--accent-gradient); margin: 1rem auto 0; border-radius: 10px;
@@ -76,6 +89,7 @@ nav {
 .btn {
   padding: 0.9rem 2rem; border-radius: 50px; font-weight: 600;
   cursor: pointer; font-size: 0.95rem; border: 2px solid var(--text-main);
+  background: transparent;
 }
 
 .btn-color-1 { background: var(--text-main); color: var(--bg-color); }
@@ -123,6 +137,7 @@ nav {
   padding: 2.5rem; border: 1px solid var(--border-color);
   border-radius: 2rem; background: var(--card-bg); text-align: center;
   box-shadow: var(--card-shadow);
+  backdrop-filter: blur(5px);
 }
 
 .about-bio {
@@ -147,12 +162,13 @@ nav {
 .project-card {
   padding: 2rem; border: 1px solid var(--border-color);
   border-radius: 2.5rem; background: var(--card-bg); text-align: center;
+  backdrop-filter: blur(5px);
 }
 
 .project-card:hover { transform: translateY(-10px); box-shadow: var(--card-shadow); }
 
 .project-img-container {
-  width: 100%; height: 220px; background: #f9fafb;
+  width: 100%; height: 220px; background: rgba(249, 250, 251, 0.5);
   border-radius: 1.5rem; overflow: hidden; margin-bottom: 2rem;
 }
 .project-img { width: 100%; height: 100%; object-fit: contain; }
@@ -164,6 +180,7 @@ nav {
   border: 1px solid var(--border-color); border-radius: 2.5rem;
   background: var(--card-bg); text-align: center;
   box-shadow: var(--card-shadow);
+  backdrop-filter: blur(5px);
 }
 .contact-p { color: var(--text-soft); font-size: 1.1rem; margin-bottom: 2rem; }
 .social-links-container { margin-top: 1.5rem; }
