@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. THEME TOGGLE ---
+    // --- 1. THEME TOGGLE (Defaulting to Dark) ---
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
 
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     htmlElement.setAttribute('data-theme', savedTheme);
 
     themeToggle.addEventListener('click', () => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('galaxy-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
-    let mouse = { x: null, y: null, radius: 150 };
+    let mouse = { x: null, y: null, radius: 170 };
 
     window.addEventListener('mousemove', (e) => {
         mouse.x = e.x;
@@ -31,19 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
             this.size = Math.random() * 2 + 0.5;
             this.baseX = this.x;
             this.baseY = this.y;
-            this.density = (Math.random() * 30) + 10;
+            this.density = (Math.random() * 30) + 15;
         }
 
         draw() {
-            // Pull the text color from CSS so stars change with theme
             const themeColor = getComputedStyle(document.documentElement)
                 .getPropertyValue('--text-main').trim();
+            
             ctx.fillStyle = themeColor;
-            ctx.globalAlpha = 0.4; // Subtle opacity
+            
+            // Add Glow Effect
+            ctx.shadowColor = themeColor;
+            ctx.shadowBlur = 5;
+            ctx.globalAlpha = 0.5;
+
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.closePath();
             ctx.fill();
+            
+            // Reset shadow so it doesn't affect other elements
+            ctx.shadowBlur = 0;
         }
 
         update() {
@@ -61,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.x -= directionX;
                 this.y -= directionY;
             } else {
-                // Smoothly drift back to original coordinate
                 if (this.x !== this.baseX) {
                     let dx = this.x - this.baseX;
                     this.x -= dx / 15;
@@ -70,6 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     let dy = this.y - this.baseY;
                     this.y -= dy / 15;
                 }
+                
+                // Subtle idle drift
+                this.x += Math.sin(Date.now() * 0.001 + this.density) * 0.05;
+                this.y += Math.cos(Date.now() * 0.001 + this.density) * 0.05;
             }
         }
     }
@@ -78,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         particles = [];
-        // Particle amount scales with screen size
         const count = (canvas.width * canvas.height) / 9000;
         for (let i = 0; i < count; i++) {
             particles.push(new Particle());

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,14 +38,20 @@
     <div class="section_text">
       <p class="section_text_p1">Hello, I'm</p>
       <h1 class="title">Anthony Jiang</h1>
-      <p class="section_text_p2">Software Engineer • Full Stack & Systems</p>
+      <p class="section_text_p2">
+        Software Engineer <span>&bull;</span> Full Stack <span>&bull;</span> Consultant
+      </p>
       <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('./components/Anthony\'s Resume.pdf')">Download CV</button>
-        <button class="btn btn-color-1" onclick="location.href='#contacts'">Contact Info</button>
+        <button class="btn btn-color-2" onclick="window.open('./components/Anthony\'s Resume.pdf', '_blank')">
+          Download CV ↗
+        </button>
+        <button class="btn btn-color-1" onclick="location.href='#contacts'">
+          Contact Info
+        </button>
       </div>
       <div class="btn-container" style="margin-top: 1rem;">
-        <img src="./components/linkedin.png" class="icon" onclick="location.href='https://www.linkedin.com/in/anthony-jiang98/'" />
-        <img src="./components/github.png" class="icon" onclick="location.href='https://github.com/AnthonyJiang98'" />
+        <img src="./components/linkedin.png" class="icon" alt="LinkedIn" onclick="window.open('https://www.linkedin.com/in/anthony-jiang98/', '_blank')" />
+        <img src="./components/github.png" class="icon" alt="GitHub" onclick="window.open('https://github.com/AnthonyJiang98', '_blank')" />
       </div>
     </div>
   </section>
@@ -79,7 +85,7 @@
     <h1 class="title">Skills & Tools</h1>
     <div class="about-containers">
       <div class="details-container">
-        <h3><img src="./components/checkmark.png" class="icon" /> Engineering</h3>
+        <h3><img src="./components/checkmark.png" class="icon" alt="Checkmark" /> Engineering</h3>
         <div class="tech-stack-wrapper">
           <span class="tech-badge">C#</span>
           <span class="tech-badge">Python</span>
@@ -89,7 +95,7 @@
         </div>
       </div>
       <div class="details-container">
-        <h3><img src="./components/checkmark.png" class="icon" /> Systems</h3>
+        <h3><img src="./components/checkmark.png" class="icon" alt="Checkmark" /> Systems</h3>
         <div class="tech-stack-wrapper">
           <span class="tech-badge">SQL (T-SQL)</span>
           <span class="tech-badge">VB.NET</span>
@@ -106,53 +112,57 @@
     <h1 class="title">Portfolio Projects</h1>
     <div class="about-containers">
       <div class="project-card">
-        <div class="project-img-container"><img src="./components/wordle.jpg" class="project-img" /></div>
+        <div class="project-img-container"><img src="./components/wordle.jpg" class="project-img" alt="Wordle Project" /></div>
         <h2 class="project-title-h2">Wordle Clone</h2>
         <div class="btn-container">
-          <button class="btn btn-color-2" onclick="location.href='https://github.com/AnthonyJiang98/Wordle'">GitHub</button>
-          <button class="btn btn-color-2" onclick="location.href='https://wordle-sandy-two.vercel.app/'">Live Demo</button>
+          <button class="btn btn-color-2" onclick="window.open('https://github.com/AnthonyJiang98/Wordle', '_blank')">GitHub ↗</button>
+          <button class="btn btn-color-2" onclick="window.open('https://wordle-sandy-two.vercel.app/', '_blank')">Live Demo ↗</button>
         </div>
       </div>
       <div class="project-card">
-        <div class="project-img-container"><img src="./components/dog-img.jpg" class="project-img" /></div>
+        <div class="project-img-container"><img src="./components/dog-img.jpg" class="project-img" alt="TinDog Project" /></div>
         <h2 class="project-title-h2">TinDog Landing</h2>
         <div class="btn-container">
-          <button class="btn btn-color-2" onclick="location.href='https://github.com/AnthonyJiang98/TinDog'">GitHub</button>
-          <button class="btn btn-color-2" onclick="location.href='https://tin-dog-henna-zeta.vercel.app/'">Live Demo</button>
+          <button class="btn btn-color-2" onclick="window.open('https://github.com/AnthonyJiang98/TinDog', '_blank')">GitHub ↗</button>
+          <button class="btn btn-color-2" onclick="window.open('https://tin-dog-henna-zeta.vercel.app/', '_blank')">Live Demo ↗</button>
         </div>
       </div>
       <div class="project-card">
-        <div class="project-img-container"><img src="./components/Sentinel Risk Engine.png" class="project-img" /></div>
+        <div class="project-img-container"><img src="./components/Sentinel Risk Engine.png" class="project-img" alt="Sentinel Project" /></div>
         <h2 class="project-title-h2">Sentinel Engine</h2>
         <div class="btn-container">
-          <button class="btn btn-color-2" onclick="location.href='https://github.com/AnthonyJiang98/Sentinel-Risk-Engine/'">GitHub</button>
-          <button class="btn btn-color-2" onclick="location.href='https://sentinel-risk-engine-aj.vercel.app/'">Live Demo</button>
+          <button class="btn btn-color-2" onclick="window.open('https://github.com/AnthonyJiang98/Sentinel-Risk-Engine/', '_blank')">GitHub ↗</button>
+          <button class="btn btn-color-2" onclick="window.open('https://sentinel-risk-engine-aj.vercel.app/', '_blank')">Live Demo ↗</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contacts">
-    <p class="section_text_p1">Get in Touch</p>
-    <h1 class="title">Let's Connect</h1>
-    <div class="contact-card">
-      <p class="contact-p">
-        Whether you have a question or just want to discuss technical systems, I'm always open to connecting.
-      </p>
-      <div class="btn-container">
-        <button class="btn btn-color-1" onclick="location.href='mailto:anthonyjiang98@gmail.com'">Email Me</button>
-      </div>
-      <div class="btn-container social-links-container">
-        <a href="https://www.linkedin.com/in/anthony-jiang98/" target="_blank" class="social-link">LinkedIn</a>
-        <span class="divider">|</span>
-        <a href="https://github.com/AnthonyJiang98" target="_blank" class="social-link">GitHub</a>
-      </div>
+<section id="contacts">
+  <p class="section_text_p1">Reach Out</p>
+  <h1 class="title">Let’s Build Something</h1>
+  <div class="contact-card">
+    <p class="contact-p">
+      I'm always down to chat about <strong>Full-Stack roles</strong>, 
+      side projects, or the latest in system architecture. Whether you're a recruiter 
+      with a cool opportunity or just want to geek out over clean code—feel free to drop a line!
+    </p>
+    <div class="btn-container">
+      <button class="btn btn-color-1" onclick="window.open('mailto:anthonyjiang98@gmail.com', '_blank')">
+        Say Hello ↗
+      </button>
     </div>
-  </section>
+    <div class="btn-container social-links-container">
+      <a href="https://www.linkedin.com/in/anthony-jiang98/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn ↗</a>
+      <span class="divider">|</span>
+      <a href="https://github.com/AnthonyJiang98" target="_blank" rel="noopener noreferrer" class="social-link">GitHub ↗</a>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2026 Anthony Jiang. Software Engineer.</p>
-  </footer>
+<footer>
+  <p>© 2026 Anthony Jiang. Built with caffeine and clean code.</p>
+</footer>
 
   <script src="script.js"></script>
 </body>
