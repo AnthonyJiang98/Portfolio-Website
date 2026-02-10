@@ -1,103 +1,77 @@
-@media screen and (max-width: 1400px) {
-    #profile {
-      height: 83vh;
-      margin-bottom: 6rem;
-    }
-    .about-containers {
-      flex-wrap: wrap;
-    }
-    #contact,
-    #projects {
-      height: fit-content;
-    }
+/* ================= MOBILE OPTIMIZATIONS ================= */
+
+/* 1. Disable Hover Animations on Touch Devices (Prevents "Sticky" Hover) */
+@media (hover: none) {
+  .details-container:active, .project-card:active, .contact-card:active {
+    transform: scale(0.98); /* Subtle feedback when tapped */
+    transition: 0.2s;
+  }
+}
+
+/* 2. Tablet & Small Laptops (1200px and down) */
+@media screen and (max-width: 1200px) {
+  section {
+    padding: 6rem 5% 2rem;
   }
   
-  @media screen and (max-width: 1200px) {
-    #desktop-nav {
-      display: none;
-    }
-    #hamburger-nav {
-      display: flex;
-    }
-    #experience,
-    .experience-details-container {
-      margin-top: 2rem;
-    }
-    #profile,
-    .section-container {
-      display: block;
-    }
-    .arrow {
-      display: none;
-    }
-    section,
-    .section-container {
-      height: fit-content;
-    }
-    section {
-      margin: 0 5%;
-    }
-    .section_pic_container {
-      width: 275px;
-      height: 275px;
-      margin: 0 auto 2rem;
-    }
-    .about-containers {
-      margin-top: 0;
-    }
+  #profile {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    gap: 2rem;
   }
-  
-  @media screen and (max-width: 600px) {
-    #contact,
-    footer {
-      height: 40vh;
-    }
-    #profile {
-      height: 83vh;
-      margin-bottom: 0;
-    }
-    article {
-      font-size: 1rem;
-    }
-    footer nav {
-      height: fit-content;
-      margin-bottom: 2rem;
-    }
-    .about-containers,
-    .contact-info-upper-container,
-    .btn-container {
-      flex-wrap: wrap;
-    }
-    .contact-info-container {
-      margin: 1rem;
-    }
-    .contact-info-container p,
-    .nav-links li a {
-      font-size: 1rem;
-    }
-    .experience-sub-title {
-      font-size: 1.25rem;
-    }
-    .logo {
-      font-size: 1.5rem;
-    }
-    .nav-links {
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: center;
-    }
-    .section_pic_container {
-      width: auto;
-      height: 46vw;
-      justify-content: center;
-    }
-    .section_text_p2 {
-      font-size: 1.25rem;
-    }
-    .title {
-      font-size: 2rem;
-    }
-    .text-container {
-      text-align: justify;
-    }
+
+  .section_pic_container img {
+    width: 280px;
+    height: 280px;
   }
+
+  .about-containers {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 1.5rem;
+  }
+}
+
+/* 3. Smartphones (600px and down) */
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .nav-links {
+    display: none; /* Usually hidden behind a hamburger menu */
+    /* If you want them visible but stacked, use: */
+    /* display: flex; flex-direction: row; gap: 1rem; font-size: 0.8rem; */
+  }
+
+  .title {
+    font-size: 1.8rem; /* Scaled down for small screens */
+  }
+
+  .section_text_p2 {
+    font-size: 1rem;
+    flex-direction: column; /* Stack "Software Engineer • Full Stack" */
+    gap: 0.5rem;
+  }
+
+  .section_text_p2 span {
+    display: none; /* Hide the bullets when stacked */
+  }
+
+  .btn-container {
+    flex-direction: column; /* Stack buttons so they are easier to tap */
+    width: 100%;
+    align-items: center;
+  }
+
+  .btn {
+    width: 80%; /* Larger tap targets */
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+}

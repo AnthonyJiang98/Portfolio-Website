@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. THEME TOGGLE (Defaulting to Dark) ---
+    // --- 1. THEME TOGGLE (Existing) ---
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
-
     const savedTheme = localStorage.getItem('theme') || 'dark';
     htmlElement.setAttribute('data-theme', savedTheme);
 
@@ -13,7 +12,39 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', newTheme);
     });
 
-    // --- 2. INTERACTIVE GALAXY ENGINE ---
+    // --- 2. NAVIGATION SCROLL ENGINE (New) ---
+    const nav = document.querySelector('nav');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        // A. Toggle Navbar Background & Height
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+
+        // B. ScrollSpy: Highlight current section link
+        let current = "";
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            // Detect if section is in the middle of the viewport
+            if (window.scrollY >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // --- 3. INTERACTIVE GALAXY ENGINE (Existing) ---
     const canvas = document.getElementById('galaxy-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -37,10 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
         draw() {
             const themeColor = getComputedStyle(document.documentElement)
                 .getPropertyValue('--text-main').trim();
-            
+
             ctx.fillStyle = themeColor;
-            
-            // Add Glow Effect
             ctx.shadowColor = themeColor;
             ctx.shadowBlur = 5;
             ctx.globalAlpha = 0.5;
@@ -49,8 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.closePath();
             ctx.fill();
-            
-            // Reset shadow so it doesn't affect other elements
             ctx.shadowBlur = 0;
         }
 
@@ -58,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
             let distance = Math.sqrt(dx * dx + dy * dy);
-            
+
             if (distance < mouse.radius) {
                 let forceDirectionX = dx / distance;
                 let forceDirectionY = dy / distance;
@@ -77,8 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     let dy = this.y - this.baseY;
                     this.y -= dy / 15;
                 }
-                
-                // Subtle idle drift
+
                 this.x += Math.sin(Date.now() * 0.001 + this.density) * 0.05;
                 this.y += Math.cos(Date.now() * 0.001 + this.density) * 0.05;
             }
