@@ -2,8 +2,12 @@
 
 /* 1. Disable Hover Animations on Touch Devices (Prevents "Sticky" Hover) */
 @media (hover: none) {
-  .details-container:active, .project-card:active, .contact-card:active {
-    transform: scale(0.98); /* Subtle feedback when tapped */
+
+  .details-container:active,
+  .project-card:active,
+  .contact-card:active {
+    transform: scale(0.98);
+    /* Subtle feedback when tapped */
     transition: 0.2s;
   }
 }
@@ -13,7 +17,7 @@
   section {
     padding: 6rem 5% 2rem;
   }
-  
+
   #profile {
     flex-direction: column;
     text-align: center;
@@ -27,7 +31,8 @@
   }
 
   .about-containers {
-    grid-template-columns: 1fr; /* Stack cards vertically */
+    grid-template-columns: 1fr;
+    /* Stack cards vertically */
     gap: 1.5rem;
   }
 }
@@ -41,33 +46,39 @@
   }
 
   .nav-links {
-    display: none; /* Usually hidden behind a hamburger menu */
+    display: none;
+    /* Usually hidden behind a hamburger menu */
     /* If you want them visible but stacked, use: */
     /* display: flex; flex-direction: row; gap: 1rem; font-size: 0.8rem; */
   }
 
   .title {
-    font-size: 1.8rem; /* Scaled down for small screens */
+    font-size: 1.8rem;
+    /* Scaled down for small screens */
   }
 
   .section_text_p2 {
     font-size: 1rem;
-    flex-direction: column; /* Stack "Software Engineer • Full Stack" */
+    flex-direction: column;
+    /* Stack "Software Engineer • Full Stack" */
     gap: 0.5rem;
   }
 
   .section_text_p2 span {
-    display: none; /* Hide the bullets when stacked */
+    display: none;
+    /* Hide the bullets when stacked */
   }
 
   .btn-container {
-    flex-direction: column; /* Stack buttons so they are easier to tap */
+    flex-direction: column;
+    /* Stack buttons so they are easier to tap */
     width: 100%;
     align-items: center;
   }
 
   .btn {
-    width: 80%; /* Larger tap targets */
+    width: 80%;
+    /* Larger tap targets */
   }
 
   .contact-card {

@@ -123,13 +123,16 @@ nav {
   width: 100%;
   top: 0;
   z-index: 1000;
-  background: transparent; /* Starts transparent */
+  background: transparent;
+  /* Starts transparent */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 100px; /* Initial taller height */
+  height: 100px;
+  /* Initial taller height */
   border-bottom: 1px solid transparent;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth transition for height/bg */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Smooth transition for height/bg */
 }
 
 /* This class is added by JS when the user scrolls down */
@@ -170,7 +173,8 @@ nav.scrolled {
   font-size: 1.1rem;
   position: relative;
   padding: 5px 0;
-  opacity: 0.7; /* Dim inactive links slightly */
+  opacity: 0.7;
+  /* Dim inactive links slightly */
   transition: opacity 0.3s ease;
 }
 
